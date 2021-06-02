@@ -36,7 +36,10 @@ body {
 
 .container {
   display: grid;
-  // MEMO: 각 색션의 row 크기부터 유동적으로 정하는 것이 반응형을 구현하는 시작점이 된다.
   // MEMO: 세로 길이를 vw로 주기 -> 창이 좁아지면 세로 길이도 작아지도록 한다.
   grid-template-rows: 80vh min-content 40vw repeat(2, min-content);
+  // MEMO: 전체 길이를 1140px로 가정하여 고정된 width(140px)를 가진 columns를 생성한다.(8 columns system)
+  // MEMO: col 중심으로 레이아웃을 그리기, row는 컨텐트 길이에 따라 유동적인 경우가 많다.
+  // MEMO: 각 라인에 이름을 붙여서 col 레이아웃을 잡기 쉽게한다. 
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
 }
