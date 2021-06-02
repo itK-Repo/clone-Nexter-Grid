@@ -33,3 +33,10 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
+
+.container {
+  display: grid;
+  // MEMO: 각 색션의 row 크기부터 유동적으로 정하는 것이 반응형을 구현하는 시작점이 된다.
+  // MEMO: 세로 길이를 vw로 주기 -> 창이 좁아지면 세로 길이도 작아지도록 한다.
+  grid-template-rows: 80vh min-content 40vw repeat(2, min-content);
+}
